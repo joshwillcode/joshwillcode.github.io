@@ -9,7 +9,7 @@ RedditLite is a simple front-end client for the Reddit API, built using React an
 - Posts can be viewed in detail, enlarging images and revealing comments
 
 ## Wireframe
-![Wireframe containing a search bar and one post component] (/img/wireframe.png)
+![Wireframe containing a search bar and one post component](/img/wireframe.png)
 
 ## Tech Used
 - Reddit API: Access to Reddit's post data
