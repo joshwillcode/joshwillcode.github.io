@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 // Import Components
-import SearchContainer from './features/search/SearchContainer';
+import SearchContainer from './features/search/searchContainer/SearchContainer';
 import Feed from './features/feed/Feed';
 
 function App() {
