@@ -1,6 +1,9 @@
 import React from 'react';
+import Time from '../time/Time';
+import VoteCount from '../voteCount/VoteCount';
+import CommentCount from '../commentCount/CommentCount';
 
-function Post({ title, subreddit, poster, url, body }) {
+function Post({ title, subreddit, poster, url, body, comments }) {
 
     // conditionally render provided url as Img or Hyperlink
     const imgUrlRegEx = /.+\.(jpeg|jpg|png).*/;
@@ -8,13 +11,13 @@ function Post({ title, subreddit, poster, url, body }) {
     if(url && imgUrlRegEx.test(url)) {
         content = (
             <div>
-                <img src={url}></img>
+                <img role='content-image' src={url}></img>
             </div>
         )
     } else {
         content = (
             <div>
-                <a href={url}>{url}</a>
+                <a role='content-link' href={url}>{url}</a>
             </div>
         )
     }
@@ -37,7 +40,11 @@ function Post({ title, subreddit, poster, url, body }) {
                     {body}
                 </div>
             )}
-            
+            <div>
+                <VoteCount/>
+                <Time/>
+                <CommentCount/>
+            </div>
 
         </div>
     )

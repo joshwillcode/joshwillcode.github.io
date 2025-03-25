@@ -19,8 +19,8 @@ describe('Post presentational component:', () => {
         const imgUrl = 'https://static.wikia.nocookie.net/azumanga/images/a/a3/Yotsuba_infobox.jpeg'
         render(<Post url={imgUrl}/>);
 
-        screen.getByRole('img');
-        const link = screen.queryByRole('link');
+        screen.getByRole('content-image');
+        const link = screen.queryByRole('content-link');
 
         expect(link).not.toBeInTheDocument();
     });
@@ -29,8 +29,8 @@ describe('Post presentational component:', () => {
         const url = 'https://worksinprogress.co/issue/how-mathematics-built-the-modern-world/'
         render(<Post url={url}/>);
 
-        screen.getByRole('link');
-        const img = screen.queryByRole('image');
+        screen.getByRole('content-link');
+        const img = screen.queryByRole('content-image');
 
         expect(img).not.toBeInTheDocument();
     });
@@ -46,4 +46,10 @@ describe('Post presentational component:', () => {
         screen.getByRole('body');
         screen.getByText('This is body text');
     });
+    // Removed until Count/VoteCount/CommentCount complete
+    // it('Displays number of comments', () => {
+    //     render(<Post comments='1600'/>);
+
+    //     screen.getByText('1.6k');
+    // })
 })
