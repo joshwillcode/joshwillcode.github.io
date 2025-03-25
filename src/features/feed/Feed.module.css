@@ -1,0 +1,4 @@
+.container {
+    /* offset by fixed searchbar */
+    margin-top: 4rem;
+}
