@@ -43,7 +43,7 @@ function Post({ title, subreddit, poster, url, body, comments }) {
             <div>
                 <VoteCount/>
                 <Time/>
-                <CommentCount/>
+                <CommentCount comments={comments}/>
             </div>
 
         </div>

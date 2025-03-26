@@ -1,11 +1,14 @@
 import React from 'react';
 import Count from '../count/Count';
+import commentBubble from '../../../assets/comment.png';
 
-function CommentCount() {
+function CommentCount({comments}) {
     return(
         <div>
-            <Count/>
-            <img src='../../../../img/comment.png'/>
+            <Count number={comments}/>
+            <img 
+                alt='Comments' 
+                src={commentBubble}/>
         </div>
         
     );

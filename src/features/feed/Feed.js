@@ -11,14 +11,16 @@ function Feed({}) {
             subreddit="r/Subreddit"
             poster="u/Poster"
             url="https://static.wikia.nocookie.net/azumanga/images/a/a3/Yotsuba_infobox.jpeg"
-            body=""/>
+            body=""
+            comments='1200'/>
             
             <Post
             title="Post Title"
             subreddit="r/Subreddit"
             poster="u/Poster"
             url="https://worksinprogress.co/issue/how-mathematics-built-the-modern-world/"
-            body="This is body text"/>
+            body="This is body text"
+            comments='20000000'/>
         </div>
     )
 }
