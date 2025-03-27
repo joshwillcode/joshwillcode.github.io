@@ -12,7 +12,9 @@ function Feed({}) {
             poster="u/Poster"
             url="https://static.wikia.nocookie.net/azumanga/images/a/a3/Yotsuba_infobox.jpeg"
             body=""
-            comments='1200'/>
+            comments='1200'
+            votes='33045'
+            upvoted={true}/>
             
             <Post
             title="Post Title"
@@ -20,7 +22,9 @@ function Feed({}) {
             poster="u/Poster"
             url="https://worksinprogress.co/issue/how-mathematics-built-the-modern-world/"
             body="This is body text"
-            comments='20000000'/>
+            comments='20000000'
+            votes='399211'
+            upvoted={false}/>
         </div>
     )
 }

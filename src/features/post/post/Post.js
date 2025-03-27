@@ -3,7 +3,7 @@ import Time from '../time/Time';
 import VoteCount from '../voteCount/VoteCount';
 import CommentCount from '../commentCount/CommentCount';
 
-function Post({ title, subreddit, poster, url, body, comments }) {
+function Post({ title, subreddit, poster, url, body, comments, votes, upvoted }) {
 
     // conditionally render provided url as Img or Hyperlink
     const imgUrlRegEx = /.+\.(jpeg|jpg|png).*/;
@@ -41,7 +41,7 @@ function Post({ title, subreddit, poster, url, body, comments }) {
                 </div>
             )}
             <div>
-                <VoteCount/>
+                <VoteCount votes={votes} upvoted={upvoted}/>
                 <Time/>
                 <CommentCount comments={comments}/>
             </div>

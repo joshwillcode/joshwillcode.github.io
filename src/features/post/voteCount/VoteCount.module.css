@@ -1,0 +1,11 @@
+.upVote {
+    color: rgb(255, 166, 0);
+}
+
+.downVote {
+    color: blue;
+}
+
+.noVote {
+    color: grey;
+}
