@@ -2,6 +2,7 @@ import React from 'react';
 import Time from '../time/Time';
 import VoteCount from '../voteCount/VoteCount';
 import CommentCount from '../commentCount/CommentCount';
+import styles from './Post.module.css';
 
 function Post({ title, subreddit, poster, url, body, comments, votes, upvoted }) {
 
@@ -10,25 +11,25 @@ function Post({ title, subreddit, poster, url, body, comments, votes, upvoted })
     let content = '';
     if(url && imgUrlRegEx.test(url)) {
         content = (
-            <div>
+            <div className={styles.contentImg}>
                 <img role='content-image' src={url}></img>
             </div>
         )
     } else {
         content = (
-            <div>
+            <div className={styles.contentLink}>
                 <a role='content-link' href={url}>{url}</a>
             </div>
         )
     }
 
     return(
-        <div>
-            <div>
-                <h2>{title}</h2>
-                <div>
-                    <div>{subreddit}</div>  
-                    <div>{poster}</div>
+        <div className={styles.post}>
+            <div className={styles.flex}>
+                <h2 className={styles.title}>{title}</h2>
+                <div className={styles.subAndPost}>
+                    <div className={styles.subreddit}>{subreddit}</div>  
+                    <div className={styles.poster}>{poster}</div>
                 </div>
             </div>
 
@@ -40,9 +41,11 @@ function Post({ title, subreddit, poster, url, body, comments, votes, upvoted })
                     {body}
                 </div>
             )}
-            <div>
-                <VoteCount votes={votes} upvoted={upvoted}/>
-                <Time/>
+            <div className={styles.flex}>
+                <div className={styles.votesAndTime}>
+                    <VoteCount votes={votes} upvoted={upvoted}/>
+                    <Time/>
+                </div>
                 <CommentCount comments={comments}/>
             </div>
 

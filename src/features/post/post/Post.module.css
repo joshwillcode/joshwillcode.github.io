@@ -1,0 +1,41 @@
+.post {
+    background-color: lightgrey;
+    padding: 2%;
+    margin: 5%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.votesAndTime {
+    display: flex;
+}
+
+.votesAndTime > * {
+    margin: .2rem;
+}
+
+.subAndPost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.poster {
+    font-size: .9rem;
+}
+
+.subreddit {
+    font-size: 1.1rem;
+}
+
+.contentImg {
+    background-color: darkgrey;
+}
+
+.contentLink {
+    background-color: darkgrey;
+    text-align: left;
+}
