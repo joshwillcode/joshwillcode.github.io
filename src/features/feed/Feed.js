@@ -1,9 +1,17 @@
-import React from 'react';
 import Post from '../post/post/Post';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFeed } from './FeedSlice';
 
 import styles from './Feed.module.css';
 
 function Feed({}) {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchFeed());
+    }, []);
+
     return(
         <div className={styles.container}>
             <Post
