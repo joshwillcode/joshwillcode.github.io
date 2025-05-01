@@ -35,6 +35,11 @@
     background-color: darkgrey;
 }
 
+.contentImg > img {
+    max-width: 100%;
+    height: auto;
+}
+
 .contentLink {
     background-color: darkgrey;
     text-align: left;

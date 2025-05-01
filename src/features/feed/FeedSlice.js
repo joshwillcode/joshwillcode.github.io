@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     status: 'loading',
-    feed: {}
+    feed: []
 }
 
 export const fetchFeed = createAsyncThunk(
@@ -52,6 +52,7 @@ const feedSlice = createSlice({
     }
 });
 
-export const selectFeed = (state) => state.feed.posts;
+export const selectPosts = (state) => state.feed.posts;
+export const selectFeedStatus = (state) => state.feed.status;
 
 export default feedSlice.reducer;

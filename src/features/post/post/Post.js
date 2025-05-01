@@ -4,7 +4,7 @@ import VoteCount from '../voteCount/VoteCount';
 import CommentCount from '../commentCount/CommentCount';
 import styles from './Post.module.css';
 
-function Post({ title, subreddit, poster, url, body, comments, votes, upvoted }) {
+function Post({ title, subreddit, poster, url, body, comments, votes, upvoted, created }) {
 
     // conditionally render provided url as Img or Hyperlink
     const imgUrlRegEx = /.+\.(jpeg|jpg|png).*/;
@@ -44,7 +44,7 @@ function Post({ title, subreddit, poster, url, body, comments, votes, upvoted })
             <div className={styles.flex}>
                 <div className={styles.votesAndTime}>
                     <VoteCount votes={votes} upvoted={upvoted}/>
-                    <Time/>
+                    <Time timestamp={created}/>
                 </div>
                 <CommentCount comments={comments}/>
             </div>
