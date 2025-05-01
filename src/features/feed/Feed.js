@@ -1,20 +1,40 @@
 import Post from '../post/post/Post';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchFeed } from './FeedSlice';
+import { fetchFeed, selectFeed } from './FeedSlice';
 
 import styles from './Feed.module.css';
 
 function Feed({}) {
     const dispatch = useDispatch();
+    const posts = useSelector(selectFeed);
 
+    // initial load
     useEffect(() => {
         dispatch(fetchFeed());
     }, []);
 
     return(
         <div className={styles.container}>
-            <Post
+
+            {
+                posts.map((post) => {
+                    return(
+                        <Post
+                            title={post.title}
+                            subreddit={post.subreddit}
+                            poster={post.author}
+                            url={post.contentUrl}
+                            body={post.bodyText}
+                            comments={post.comments}
+                            votes={post.score}
+                            upvoted={true}/>
+                    )
+                    
+                })
+            }
+
+            {/* <Post
             title="Post Title"
             subreddit="r/Subreddit"
             poster="u/Poster"
@@ -32,7 +52,7 @@ function Feed({}) {
             body="This is body text"
             comments='20000000'
             votes='399211'
-            upvoted={false}/>
+            upvoted={false}/> */}
         </div>
     )
 }

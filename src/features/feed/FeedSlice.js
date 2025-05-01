@@ -34,7 +34,7 @@ const feedSlice = createSlice({
             })
             .addCase(fetchFeed.fulfilled, (state, action) => {
                 state.status = 'fulfilled';
-                state.feed = action.payload.data.children.map((post) => {
+                state.posts = action.payload.data.children.map((post) => {
                     return ({
                         postId: post.data.name,
                         subreddit: post.data.subreddit_name_prefixed,
@@ -51,5 +51,7 @@ const feedSlice = createSlice({
             })
     }
 });
+
+export const selectFeed = (state) => state.feed.posts;
 
 export default feedSlice.reducer;
