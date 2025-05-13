@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "//joshwillcode.github.io/static/css/main.850494f1.css",
+    "main.js": "//joshwillcode.github.io/static/js/main.3818def1.js",
+    "static/js/488.a115ecbe.chunk.js": "//joshwillcode.github.io/static/js/488.a115ecbe.chunk.js",
+    "index.html": "//joshwillcode.github.io/index.html",
+    "main.850494f1.css.map": "//joshwillcode.github.io/static/css/main.850494f1.css.map",
+    "main.3818def1.js.map": "//joshwillcode.github.io/static/js/main.3818def1.js.map",
+    "488.a115ecbe.chunk.js.map": "//joshwillcode.github.io/static/js/488.a115ecbe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.850494f1.css",
+    "static/js/main.3818def1.js"
+  ]
+}
