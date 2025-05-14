@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     status: 'loading',
-    feed: []
+    feed: [],
+    searchString: ''
 }
 
 export const fetchFeed = createAsyncThunk(
@@ -26,7 +27,11 @@ export const fetchFeed = createAsyncThunk(
 const feedSlice = createSlice({
     name: "feed",
     initialState,
-    reducers: {},
+    reducers: {
+        setSearchString(state, action) {
+            state.searchString = action.payload;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchFeed.pending, (state) => {
@@ -52,7 +57,19 @@ const feedSlice = createSlice({
     }
 });
 
-export const selectPosts = (state) => state.feed.posts;
+export const selectPosts = (state) => {
+    const regex = new RegExp(".*" + state.feed.searchString + ".*", "i");
+    if(state.feed.status === "loading") {
+        return
+    } else {
+        return state.feed.posts.filter((post) => {
+            return regex.test(post.title);
+        });
+    }
+};
+
 export const selectFeedStatus = (state) => state.feed.status;
+export const selectSearchString = (state) => state.feed.searchString;
+export const { setSearchString } = feedSlice.actions;
 
 export default feedSlice.reducer;

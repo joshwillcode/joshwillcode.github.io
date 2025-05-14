@@ -13,8 +13,9 @@ function Feed({}) {
         dispatch(fetchFeed());
     }, []);
 
-    const posts = useSelector(selectPosts);
     const status = useSelector(selectFeedStatus);
+    const posts = useSelector(selectPosts);
+    
     if(status === "loading") {
         return(
             <div className={styles.container}>Loading</div>
