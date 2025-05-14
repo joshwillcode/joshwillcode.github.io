@@ -3,8 +3,25 @@ import Time from '../time/Time';
 import VoteCount from '../voteCount/VoteCount';
 import CommentCount from '../commentCount/CommentCount';
 import styles from './Post.module.css';
+import { useDispatch } from 'react-redux';
+import { openFocusPost } from '../../focusPost/FocusPostSlice';
 
 function Post({ title, subreddit, poster, url, body, comments, votes, upvoted, created }) {
+
+    const dispatch = useDispatch();
+    const handlePostClick = () => {
+        dispatch(openFocusPost({
+            title: title,
+            subreddit: subreddit,
+            poster: poster,
+            url: url,
+            body: body,
+            comments: comments,
+            votes: votes,
+            upvoted: upvoted,
+            created: created
+        }));
+    }
 
     // conditionally render provided url as Img or Hyperlink
     const imgUrlRegEx = /.+\.(jpeg|jpg|png).*/;
@@ -24,7 +41,7 @@ function Post({ title, subreddit, poster, url, body, comments, votes, upvoted, c
     }
 
     return(
-        <div className={styles.post}>
+        <div className={styles.post} onClick={handlePostClick}>
             <div className={styles.flex}>
                 <h2 className={styles.title}>{title}</h2>
                 <div className={styles.subAndPost}>
